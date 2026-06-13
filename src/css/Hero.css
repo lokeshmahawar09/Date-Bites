@@ -1,0 +1,344 @@
+/* =========================================
+   HERO SECTION 2 — Featured Product Card
+   ========================================= */
+
+.hero2 {
+  position: relative;
+  padding: 80px 40px;
+  background: #f2f5f2;
+  overflow: hidden;
+}
+
+.hero2-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(46, 125, 50, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 50%, rgba(212, 160, 74, 0.03) 0%, transparent 45%);
+}
+
+.hero2-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card */
+
+.hero2-card {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px;
+
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 4px rgba(0, 0, 0, 0.02);
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero2--entered .hero2-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image */
+
+.hero2-card-image-wrap {
+  flex: 0 0 360px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero2-image-glow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46, 125, 50, 0.08) 0%, transparent 60%);
+}
+
+.hero2-badge-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.hero2-card-image-wrap .img-frame {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Body */
+
+.hero2-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero2-card-body > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero2--entered .hero2-card-body > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero2--entered .hero2-card-body > *:nth-child(1) { transition-delay: 0.12s; }
+.hero2--entered .hero2-card-body > *:nth-child(2) { transition-delay: 0.18s; }
+.hero2--entered .hero2-card-body > *:nth-child(3) { transition-delay: 0.24s; }
+.hero2--entered .hero2-card-body > *:nth-child(4) { transition-delay: 0.30s; }
+.hero2--entered .hero2-card-body > *:nth-child(5) { transition-delay: 0.36s; }
+.hero2--entered .hero2-card-body > *:nth-child(6) { transition-delay: 0.42s; }
+.hero2--entered .hero2-card-body > *:nth-child(7) { transition-delay: 0.48s; }
+
+.hero2-suptitle {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.hero2-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #1a1d1a;
+  margin-bottom: 12px;
+}
+
+.hero2-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.hero2-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.hero2-star {
+  color: #d4a04a;
+  font-size: 15px;
+}
+
+.hero2-rating-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1d1a;
+}
+
+.hero2-rating-count {
+  font-size: 13px;
+  color: #7a857c;
+}
+
+.hero2-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5c665e;
+  margin-bottom: 18px;
+  max-width: 440px;
+}
+
+.hero2-pricing {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.hero2-price-current {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1a1d1a;
+  letter-spacing: -0.5px;
+}
+
+.hero2-price-old {
+  font-size: 18px;
+  color: #a0a8a2;
+  text-decoration: line-through;
+}
+
+.hero2-price-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(212, 160, 74, 0.15);
+  color: #b8860b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.hero2-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.hero2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.hero2-btn--primary {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(46, 125, 50, 0.2);
+}
+
+.hero2-btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(46, 125, 50, 0.3);
+}
+
+.hero2-btn--secondary {
+  background: #ffffff;
+  color: #2e7d32;
+  border: 1.5px solid #d0d8d2;
+}
+
+.hero2-btn--secondary:hover {
+  border-color: #2e7d32;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.hero2-btn svg {
+  font-size: 16px;
+}
+
+.hero2-features {
+  display: flex;
+  gap: 20px;
+}
+
+.hero2-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #5c665e;
+}
+
+.hero2-feature svg {
+  color: #2e7d32;
+  font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .hero2-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+    gap: 30px;
+  }
+
+  .hero2-card-image-wrap {
+    flex: 0 0 auto;
+  }
+
+  .hero2-card-image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero2-image-glow {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero2-desc {
+    margin: 0 auto 18px;
+  }
+
+  .hero2-rating,
+  .hero2-pricing,
+  .hero2-actions,
+  .hero2-features {
+    justify-content: center;
+  }
+
+  .hero2-badge-top {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero2 {
+    padding: 40px 16px;
+  }
+
+  .hero2-title {
+    font-size: 28px;
+  }
+
+  .hero2-card-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero2-price-current {
+    font-size: 28px;
+  }
+
+  .hero2-actions {
+    flex-direction: column;
+  }
+
+  .hero2-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero2-features {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

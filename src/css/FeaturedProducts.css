@@ -1,0 +1,286 @@
+/* Featured Products */
+
+.fp {
+  padding: 80px 40px 100px;
+  background: #f8faf8;
+}
+
+.fp-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.fp-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.fp-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1a1d1a;
+  margin-bottom: 8px;
+}
+
+.fp-subtitle {
+  font-size: 15px;
+  color: #7a857c;
+}
+
+/* Grid */
+
+.fp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* Card */
+
+.fp-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s ease;
+
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fp-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.07);
+}
+
+/* Image */
+
+.fp-card-image-wrap {
+  position: relative;
+}
+
+.fp-card-image-wrap .img-frame {
+  border-radius: 20px 20px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: none;
+}
+
+.fp-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Overlay */
+
+.fp-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  display: flex;
+  gap: 8px;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fp-card:hover .fp-card-overlay {
+  transform: translateY(0);
+}
+
+.fp-overlay-btn {
+  border: none;
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  border-radius: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.fp-overlay-btn--cart {
+  flex: 1;
+  padding: 12px 16px;
+
+  background: #1a1d1a;
+  color: #ffffff;
+}
+
+.fp-overlay-btn--cart:hover {
+  background: #2e7d32;
+  transform: translateY(-1px);
+}
+
+.fp-overlay-btn--wishlist {
+  width: 44px;
+  height: 44px;
+
+  background: #ffffff;
+  color: #4a554c;
+
+  font-size: 16px;
+}
+
+.fp-overlay-btn--wishlist:hover {
+  color: #e53935;
+  transform: translateY(-1px);
+}
+
+/* Body */
+
+.fp-card-body {
+  padding: 16px 20px 20px;
+}
+
+.fp-card-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1d1a;
+
+  margin-bottom: 6px;
+}
+
+.fp-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 8px;
+}
+
+.fp-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.fp-star--full {
+  color: #d4a04a;
+}
+
+.fp-star--half {
+  color: #d4a04a;
+  opacity: 0.6;
+}
+
+.fp-star--empty {
+  color: #d0d8d2;
+}
+
+.fp-card-rating-text {
+  font-size: 12px;
+  color: #7a857c;
+}
+
+.fp-card-pricing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fp-card-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1d1a;
+}
+
+.fp-card-price-old {
+  font-size: 14px;
+  color: #a0a8a2;
+  text-decoration: line-through;
+}
+
+@media (max-width: 1100px) {
+  .fp-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fp {
+    padding: 60px 24px 80px;
+  }
+
+  .fp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .fp-title {
+    font-size: 28px;
+  }
+
+  .fp-header {
+    margin-bottom: 32px;
+  }
+
+  .fp-subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fp {
+    padding: 40px 16px 60px;
+  }
+
+  .fp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .fp-title {
+    font-size: 24px;
+  }
+
+  .fp-card-body {
+    padding: 12px 14px 16px;
+  }
+
+  .fp-card-name {
+    font-size: 13px;
+  }
+
+  .fp-card-price {
+    font-size: 17px;
+  }
+
+  .fp-overlay-btn--cart {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .fp-overlay-btn--wishlist {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+}
