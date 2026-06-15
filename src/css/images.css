@@ -54,7 +54,29 @@
 .img-w-280 { max-width: 280px; width: 100%; }
 .img-w-320 { max-width: 320px; width: 100%; }
 .img-w-380 { max-width: 380px; width: 100%; }
+.img-w-440 { max-width: 440px; width: 100%; }
 .img-w-480 { max-width: 480px; width: 100%; }
+
+/* === Reduced Motion — accessibility adaptation ===
+   Slows animations rather than removing them entirely */
+
+@media (prefers-reduced-motion: reduce) {
+  .img-frame,
+  .img-frame img,
+  .img-frame:hover,
+  .img-frame:hover img {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .img-frame:hover {
+    transform: none;
+  }
+
+  .img-frame:hover img {
+    transform: none;
+  }
+}
 
 /* === Button Shine Effect === */
 

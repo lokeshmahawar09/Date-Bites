@@ -1,0 +1,233 @@
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: modalFadeIn 0.35s ease;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(160deg, #ffffff 0%, #fafcfa 100%);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.15);
+  animation: modalScaleIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f2f0;
+  color: #4a554c;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+  z-index: 2;
+}
+
+.modal-close:hover {
+  background: #2e7d32;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 48px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-logo {
+  width: 72px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.modal-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 100px;
+  background: rgba(46, 125, 50, 0.08);
+  color: #2e7d32;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.modal-heading {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1a1d1a;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.modal-heading-accent {
+  color: #d4a04a;
+}
+
+.modal-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #6a756c;
+  margin-bottom: 24px;
+  max-width: 340px;
+}
+
+.modal-input-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  border: 1.5px solid #e0e6e0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+  margin-bottom: 16px;
+}
+
+.modal-input-group:focus-within {
+  border-color: #2e7d32;
+}
+
+.modal-input-prefix {
+  flex-shrink: 0;
+  padding: 14px 0 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1d1a;
+  background: #f5f7f5;
+  border-right: 1px solid #e0e6e0;
+}
+
+.modal-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #1a1d1a;
+  background: transparent;
+}
+
+.modal-input::placeholder {
+  color: #a0a8a2;
+}
+
+.modal-btn {
+  width: 100%;
+  max-width: 340px;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(46, 125, 50, 0.25);
+}
+
+.modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(46, 125, 50, 0.35);
+}
+
+.modal-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .modal-body {
+    padding: 40px 24px 32px;
+  }
+
+  .modal-logo {
+    width: 60px;
+    margin-bottom: 12px;
+  }
+
+  .modal-heading {
+    font-size: 20px;
+  }
+
+  .modal-desc {
+    font-size: 13px;
+  }
+
+  .modal-input-prefix {
+    padding: 12px 0 12px 14px;
+    font-size: 14px;
+  }
+
+  .modal-input {
+    padding: 12px 12px;
+    font-size: 14px;
+  }
+
+  .modal-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay {
+    animation: none;
+  }
+
+  .modal {
+    animation: none;
+  }
+
+  .modal-close {
+    transition-duration: 0.01ms !important;
+  }
+}

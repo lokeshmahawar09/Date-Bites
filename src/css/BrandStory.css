@@ -110,6 +110,10 @@
 }
 
 @media (max-width: 860px) {
+  .story {
+    padding: 60px 24px;
+  }
+
   .story-inner {
     flex-direction: column;
     text-align: center;
@@ -118,6 +122,7 @@
 
   .story-text p {
     margin: 0 auto 14px;
+    max-width: 100%;
   }
 
   .story-image-wrap {
@@ -133,10 +138,18 @@
 
 @media (max-width: 480px) {
   .story {
-    padding: 60px 20px;
+    padding: 40px 16px;
   }
 
   .story-title {
-    font-size: 30px;
+    font-size: 26px;
+  }
+
+  .story-tag {
+    font-size: 11px;
+  }
+
+  .story-text p {
+    font-size: 14px;
   }
 }

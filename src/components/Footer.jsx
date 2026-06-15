@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import {
   FaInstagram,
@@ -9,10 +10,28 @@ import logo from "../assets/images/logo.png";
 import "../css/Footer.css";
 
 function Footer() {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="footer">
+    <footer className={`footer ${visible ? "footer--visible" : ""}`} ref={ref}>
       <div className="footer-inner">
-        {/* Brand Column */}
         <div className="footer-col footer-col--brand">
           <div className="footer-logo">
             <img src={logo} alt="Date Bites" className="footer-logo-img" />
@@ -38,7 +57,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div className="footer-col">
           <h4 className="footer-col-title">Quick Links</h4>
           <ul className="footer-links">
@@ -50,7 +68,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Support */}
         <div className="footer-col">
           <h4 className="footer-col-title">Support</h4>
           <ul className="footer-links">
@@ -62,7 +79,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
         <div className="footer-col">
           <h4 className="footer-col-title">Get in Touch</h4>
           <ul className="footer-contact">

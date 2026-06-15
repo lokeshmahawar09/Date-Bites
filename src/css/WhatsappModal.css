@@ -1,0 +1,263 @@
+@keyframes wamFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes wamScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.wam-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: wamFadeIn 0.35s ease;
+}
+
+.wam {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.15);
+  animation: wamScaleIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.wam-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f2f0;
+  color: #4a554c;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+  z-index: 2;
+}
+
+.wam-close:hover {
+  background: #2e7d32;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.wam-body {
+  padding: 48px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wam-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.wam-icon {
+  font-size: 32px;
+  color: #25d366;
+}
+
+.wam-heading {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1d1a;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.wam-heart {
+  color: #e74c3c;
+}
+
+.wam-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6a756c;
+  margin-bottom: 28px;
+  max-width: 320px;
+}
+
+.wam-field {
+  width: 100%;
+  max-width: 340px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.wam-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a554c;
+  margin-bottom: 6px;
+}
+
+.wam-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e0e6e0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #1a1d1a;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.25s ease;
+  box-sizing: border-box;
+}
+
+.wam-input:focus {
+  border-color: #2e7d32;
+}
+
+.wam-input::placeholder {
+  color: #a0a8a2;
+}
+
+.wam-input-group {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e0e6e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.wam-input-group:focus-within {
+  border-color: #2e7d32;
+}
+
+.wam-input-prefix {
+  flex-shrink: 0;
+  padding: 14px 0 14px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1d1a;
+  background: #f5f7f5;
+  border-right: 1px solid #e0e6e0;
+}
+
+.wam-input--phone {
+  border: none;
+  border-radius: 0;
+}
+
+.wam-btn {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+  margin-top: 8px;
+}
+
+.wam-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(37, 211, 102, 0.35);
+}
+
+.wam-btn:active {
+  transform: translateY(0);
+}
+
+.wam-btn svg {
+  font-size: 20px;
+}
+
+@media (max-width: 480px) {
+  .wam-body {
+    padding: 40px 24px 28px;
+  }
+
+  .wam-icon-wrap {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+  }
+
+  .wam-icon {
+    font-size: 28px;
+  }
+
+  .wam-heading {
+    font-size: 19px;
+  }
+
+  .wam-desc {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+
+  .wam-input,
+  .wam-input-prefix {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .wam-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wam-overlay {
+    animation: none;
+  }
+
+  .wam {
+    animation: none;
+  }
+
+  .wam-close {
+    transition-duration: 0.01ms !important;
+  }
+}
